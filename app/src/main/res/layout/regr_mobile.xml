@@ -15,18 +15,11 @@
 
 
     <TableLayout
-        android:id="@+id/tl_regr_form"
+        android:id="@+id/tl_regr_mobile_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:stretchColumns="1"
         android:layout_marginTop="50dp" >
-
-        <TextView
-            android:id="@+id/txt_regr_mobile_warn"
-            style="@style/Default"
-            android:textColor="@color/red"
-            android:gravity="center_horizontal"
-            android:layout_centerHorizontal="true" />
 
         <TableRow>
 
@@ -35,7 +28,7 @@
                 android:text="手机:" />
 
             <EditText
-                android:id="@+id/edtTxt_regr_mobile"
+                android:id="@+id/edtTxt_regr_mobile_mobile"
                 style="@style/RoundEdtTxt"
                 android:layout_span="2"
                 android:hint="手机号码" />
@@ -49,12 +42,12 @@
                 android:text="验证码:" />
 
             <EditText
-                android:id="@+id/edtTxt_regr_code"
+                android:id="@+id/edtTxt_regr_mobile_code"
                 style="@style/RoundEdtTxt"
                 android:hint="验证码" />
 
             <Button
-                android:id="@+id/btn_regr_code"
+                android:id="@+id/btn_regr_mobile_code"
                 style="@style/RoundBtn"
                 android:text="获取验证码" />
 
@@ -67,7 +60,7 @@
                 android:text="密码:" />
 
             <EditText
-                android:id="@+id/edtTxt_regr_pwd"
+                android:id="@+id/edtTxt_regr_mobile_pwd"
                 style="@style/RoundEdtTxt"
                 android:layout_span="2"
                 android:hint="密码" />
@@ -81,7 +74,7 @@
                 android:text="确认密码:" />
 
             <EditText
-                android:id="@+id/edtTxt_regr_pwd1"
+                android:id="@+id/edtTxt_regr_mobile_pwd1"
                 style="@style/RoundEdtTxt"
                 android:layout_span="2"
                 android:hint="请重复输入密码" />
@@ -90,19 +83,27 @@
 
     </TableLayout>
 
+    <TextView
+        android:id="@+id/txt_regr_mobile_warn"
+        style="@style/Default"
+        android:textColor="@color/red"
+        android:layout_below="@id/tl_regr_mobile_form"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true" />
+
     <Button
-        android:id="@+id/btn_regr_submit"
+        android:id="@+id/btn_regr_mobile_submit"
         style="@style/RoundBtn"
-        android:layout_below="@id/tl_regr_form"
+        android:layout_below="@id/txt_regr_mobile_warn"
         android:layout_width="250dp"
         android:layout_centerHorizontal="true"
         android:text="提交" />
 
     <TextView
-        android:id="@+id/btn_regr_toEmail"
+        android:id="@+id/btn_regr_mobile_toEmail"
         style="@style/Default"
         android:clickable="true"
-        android:layout_below="@id/btn_regr_submit"
+        android:layout_below="@id/btn_regr_mobile_submit"
         android:layout_width="100dp"
         android:gravity="center_horizontal"
         android:layout_centerHorizontal="true"

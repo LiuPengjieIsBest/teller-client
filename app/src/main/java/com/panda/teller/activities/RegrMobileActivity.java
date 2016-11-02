@@ -42,13 +42,13 @@ public class RegrMobileActivity extends Activity {
         setContentView(R.layout.regr_mobile);
 
         txtWarn = (TextView)  findViewById(R.id.txt_regr_mobile_warn);
-        edtMobile = (EditText) findViewById(R.id.edtTxt_regr_mobile);
-        edtCode = (EditText) findViewById(R.id.edtTxt_regr_code);
-        edtPwd = (EditText) findViewById(R.id.edtTxt_regr_pwd);
-        edtPwd1 = (EditText) findViewById(R.id.edtTxt_regr_pwd1);
+        edtMobile = (EditText) findViewById(R.id.edtTxt_regr_mobile_mobile);
+        edtCode = (EditText) findViewById(R.id.edtTxt_regr_mobile_code);
+        edtPwd = (EditText) findViewById(R.id.edtTxt_regr_mobile_pwd);
+        edtPwd1 = (EditText) findViewById(R.id.edtTxt_regr_mobile_pwd1);
 
         // 验证码按钮
-        Button codeBtn = (Button) findViewById(R.id.btn_regr_code);
+        Button codeBtn = (Button) findViewById(R.id.btn_regr_mobile_code);
         codeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +58,7 @@ public class RegrMobileActivity extends Activity {
         });
 
         // 提交按钮
-        Button submitBtn = (Button) findViewById(R.id.btn_regr_submit);
+        Button submitBtn = (Button) findViewById(R.id.btn_regr_mobile_submit);
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,7 +117,7 @@ public class RegrMobileActivity extends Activity {
         });
 
         // 跳转到邮箱注册页面
-        TextView toEmailTv = (TextView) findViewById(R.id.btn_regr_toEmail);
+        TextView toEmailTv = (TextView) findViewById(R.id.btn_regr_mobile_toEmail);
         toEmailTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
