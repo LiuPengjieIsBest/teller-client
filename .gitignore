@@ -1,10 +1,12 @@
 # OSX
 *.DS_Store
 
+
 # Gradle files
 build/
 .gradle/
 */build/
+
 
 # IDEA
 *.iml
@@ -19,23 +21,28 @@ build/
 .idea/workspace.xml
 .idea/libraries
 
+
 # Built application files
 *.apk
 *.ap_
 
+
 # Files for the Dalvik VM
 *.dex
 
+
 # Java class files
 *.class
+
 
 # Generated files
 antLauncher/bin
 antLauncher/gen
 
+
 # Local configuration file (sdk path, etc)
 local.properties
 
+
 # Log Files
 *.log 
-
