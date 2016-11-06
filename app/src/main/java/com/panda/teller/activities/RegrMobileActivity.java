@@ -1,6 +1,7 @@
 package com.panda.teller.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -121,7 +122,8 @@ public class RegrMobileActivity extends Activity {
         toEmailTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RegrEmailActivity.actionStart(RegrMobileActivity.this);
+                Intent intent = new Intent(RegrMobileActivity.this, RegrEmailActivity.class);
+                startActivity(intent);
             }
         });
 
