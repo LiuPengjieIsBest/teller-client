@@ -1,4 +1,4 @@
-package com.panda.teller.activities;
+package com.panda.teller.views.adapters;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;

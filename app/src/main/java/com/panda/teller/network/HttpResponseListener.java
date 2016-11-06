@@ -1,4 +1,4 @@
-package com.panda.teller.utils;
+package com.panda.teller.network;
 
 /**
  * Created by root on 16-10-30.

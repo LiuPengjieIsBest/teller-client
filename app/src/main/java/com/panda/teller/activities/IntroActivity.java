@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.panda.teller.R;
+import com.panda.teller.views.adapters.ViewPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

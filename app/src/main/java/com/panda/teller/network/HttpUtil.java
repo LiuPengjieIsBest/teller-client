@@ -1,4 +1,4 @@
-package com.panda.teller.utils;
+package com.panda.teller.network;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

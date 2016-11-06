@@ -12,8 +12,8 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.panda.teller.R;
 import com.panda.teller.models.User;
-import com.panda.teller.utils.HttpResponseListener;
-import com.panda.teller.utils.HttpUtil;
+import com.panda.teller.network.HttpResponseListener;
+import com.panda.teller.network.HttpUtil;
 import com.panda.teller.utils.StringUtil;
 
 /**
