@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 搜索页面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+
+        <TextView
+            style="@style/Default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="历史搜索" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/discard"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <!-- 历史搜索标签布局 -->
+    <com.panda.teller.views.widgets.FlowLayout
+        android:id="@+id/flow_fragment_search_hst"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            style="@style/Default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="推荐搜索" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/discard"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <!-- 推荐搜索标签布局 -->
+    <com.panda.teller.views.widgets.FlowLayout
+        android:id="@+id/flow_fragment_search_rcmd"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+</LinearLayout>

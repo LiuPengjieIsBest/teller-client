@@ -23,17 +23,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/iv1"
-            android:src="@drawable/login_point_selected"/>
+            android:src="@drawable/point_selected"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/iv2"
-            android:src="@drawable/login_point"/>
+            android:src="@drawable/point"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/iv3"
-            android:src="@drawable/login_point"/>
+            android:src="@drawable/point"/>
     </LinearLayout>
 
 </RelativeLayout>

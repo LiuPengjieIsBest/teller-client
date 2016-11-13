@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Teller</string>
+    <string name="action_search">搜索</string>
+    <string name="action_main">主页</string>
+
+    <string-array name="search_catg">
+        <item>问题</item>
+        <item>视频</item>
+        <item>征集令</item>
+    </string-array>
 </resources>

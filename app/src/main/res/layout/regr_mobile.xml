@@ -13,13 +13,21 @@
         android:text="手机注册" />
 
 
+    <Button
+        android:id="@+id/btn_regr_submit"
+        style="@style/RoundBtn"
+        android:layout_below="@id/tl_regr_form"
+        android:layout_width="250dp"
+        android:layout_centerHorizontal="true"
+        android:text="提交" />
 
     <TableLayout
         android:id="@+id/tl_regr_mobile_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:stretchColumns="1"
-        android:layout_marginTop="50dp" >
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <TableRow>
 
@@ -63,6 +71,7 @@
                 android:id="@+id/edtTxt_regr_mobile_pwd"
                 style="@style/RoundEdtTxt"
                 android:layout_span="2"
+                android:inputType="textPassword"
                 android:hint="密码" />
 
         </TableRow>
@@ -106,7 +115,7 @@
         android:layout_below="@id/btn_regr_mobile_submit"
         android:layout_width="100dp"
         android:gravity="center_horizontal"
-        android:layout_centerHorizontal="true"
-        android:text="邮箱注册" />
+        android:text="邮箱注册"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

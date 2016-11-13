@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_actionbar_main_user"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/usermenu" />
+
+    <EditText
+        android:id="@+id/edtTxt_actionbar_main_search"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        style="@style/RoundEdtTxt"
+        android:drawableLeft="@drawable/search"
+        android:focusable="false"
+        android:hint="@string/action_search"
+        android:layout_centerHorizontal="true"/>
+
+</LinearLayout>

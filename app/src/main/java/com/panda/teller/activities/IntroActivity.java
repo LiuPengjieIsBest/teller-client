@@ -79,9 +79,9 @@ public class IntroActivity extends Activity implements ViewPager.OnPageChangeLis
     public void onPageSelected(int position) {
         for (int i = 0; i < ids.length; i++) {
             if (position == i)
-                points[i].setImageResource(R.drawable.login_point_selected);
+                points[i].setImageResource(R.drawable.point_selected);
             else
-                points[i].setImageResource(R.drawable.login_point);
+                points[i].setImageResource(R.drawable.point);
         }
     }
 

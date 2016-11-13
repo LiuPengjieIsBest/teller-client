@@ -1,5 +1,8 @@
 package com.panda.teller.utils;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by root on 16-11-1.
  */
@@ -24,4 +27,10 @@ public class StringUtil {
         }
     }
 
+    public static boolean checkEmail(String strEmail) {
+        String strPattern = "^[a-zA-Z0-9][\\w.\\-]*[a-zA-Z0-9]@[a-zA-Z0-9][\\w.\\-]*[a-zA-Z0-9]\\.[a-zA-Z][a-zA-Z.]*[a-zA-Z]$";
+        Pattern p = Pattern.compile(strPattern);
+        Matcher m = p.matcher(strEmail);
+        return m.matches();
+    }
 }
