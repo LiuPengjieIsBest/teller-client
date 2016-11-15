@@ -90,6 +90,7 @@ public class MainFragment extends Fragment implements ViewPager.OnPageChangeList
         videos.add(new Video());
         videos.add(new Video());
         videos.add(new Video());
+        videos.add(new Video());
     }
 
     /* 控制视频菜单中的每个单元，包括添加数据、添加监听等 */
