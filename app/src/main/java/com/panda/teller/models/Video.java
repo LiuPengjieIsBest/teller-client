@@ -22,6 +22,8 @@ public class Video {
 
     int likeCount;
 
+    String videoICover;
+
     /* 协调数据库-go-java的计时 */
     long time;
 
@@ -61,6 +63,10 @@ public class Video {
         this.time = time;
     }
 
+    public void setVideoICover(String videoICover) {
+        this.videoICover = videoICover;
+    }
+
     public int getId() {
 
         return id;
@@ -96,5 +102,9 @@ public class Video {
 
     public long getTime() {
         return time;
+    }
+
+    public String getVideoICover() {
+        return videoICover;
     }
 }
