@@ -9,6 +9,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -31,6 +32,8 @@ import com.panda.teller.views.actionbar.SearchActionbar;
  */
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private final static String TAG = "MainActivity";
 
     /* 主页左上角用户菜单弹出按钮 */
     private ImageView userMenuImg;
@@ -169,41 +172,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         case 0:
             /* 改变图标状态 */
             mainImg.setImageResource(R.drawable.main_selected);
-            /* 改变页面 */
-            if(mainFragment == null) {
-                mainFragment = new MainFragment();
-                /* activity_main可以找到一个用于显示界面的FrameLayout */
-                transaction.add(R.id.fl_activity_main_content, mainFragment);
-            } else {
-                transaction.show(mainFragment);
-            }
+            setFragment(transaction, "mainFragment");
             break;
         case 1:
             catgImg.setImageResource(R.drawable.catg_selected);
-            if(catgFragment == null) {
-                catgFragment = new CatgFragment();
-                transaction.add(R.id.fl_activity_main_content, catgFragment);
-            } else {
-                transaction.show(catgFragment);
-            }
+            setFragment(transaction, "catgFragment");
             break;
         case 2:
             starImg.setImageResource(R.drawable.star_selected);
-            if(starFragment == null) {
-                starFragment = new StarFragment();
-                transaction.add(R.id.fl_activity_main_content, starFragment);
-            } else {
-                transaction.show(starFragment);
-            }
+            setFragment(transaction, "starFragment");
             break;
         case 3:
             settingImg.setImageResource(R.drawable.setting_selected);
-            if(settingFragment == null) {
-                settingFragment = new SettingFragment();
-                transaction.add(R.id.fl_activity_main_content, settingFragment);
-            } else {
-                transaction.show(settingFragment);
-            }
+            setFragment(transaction, "settingFragment");
             break;
         default:
             break;
@@ -238,6 +219,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(settingFragment != null) {
             transaction.hide(settingFragment);
+        }
+    }
+
+    /**
+     * 改变当前显示的页面
+     * @param transaction
+     * @param fragmentName
+     */
+    private void setFragment(FragmentTransaction transaction, String fragmentName) {
+        switch(fragmentName) {
+        case "mainFragment":
+            if(mainFragment == null) {
+                mainFragment = new MainFragment();
+                /* activity_main可以找到一个用于显示界面的FrameLayout */
+                transaction.add(R.id.fl_activity_main_content, mainFragment);
+            } else {
+                transaction.show(mainFragment);
+            }
+            break;
+        case "catgFragment":
+            if(catgFragment == null) {
+                catgFragment = new CatgFragment();
+                transaction.add(R.id.fl_activity_main_content, catgFragment);
+            } else {
+                transaction.show(catgFragment);
+            }
+            break;
+        case "starFragment":
+            if(starFragment == null) {
+                starFragment = new StarFragment();
+                transaction.add(R.id.fl_activity_main_content, starFragment);
+            } else {
+                transaction.show(starFragment);
+            }
+            break;
+        case "settingFragment":
+            if(settingFragment == null) {
+                settingFragment = new SettingFragment();
+                transaction.add(R.id.fl_activity_main_content, settingFragment);
+            } else {
+                transaction.show(settingFragment);
+            }
+            break;
+        default:
+            Log.d(TAG, "Fragment unexists");
+            break;
         }
     }
 
