@@ -8,7 +8,7 @@
     <!-- 分割线 -->
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="2dp"
         android:scaleType="fitXY"
         android:src="@drawable/bar" />
 
@@ -27,8 +27,8 @@
 
             <ImageView
                 android:id="@+id/iv_fragment_tabs_main_img"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerInParent="true"
                 android:src="@drawable/main" />
 
@@ -42,8 +42,8 @@
 
             <ImageView
                 android:id="@+id/iv_fragment_tabs_catg_img"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerInParent="true"
                 android:src="@drawable/catg" />
 
@@ -58,10 +58,10 @@
 
             <ImageView
                 android:id="@+id/iv_fragment_tabs_star_img"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerInParent="true"
-                android:src="@drawable/star" />
+                android:src="@drawable/follow" />
 
         </RelativeLayout>
 
@@ -73,10 +73,10 @@
 
             <ImageView
                 android:id="@+id/iv_fragment_tabs_setting_img"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerInParent="true"
-                android:src="@drawable/setting" />
+                android:src="@drawable/submit" />
 
         </RelativeLayout>
     </LinearLayout>

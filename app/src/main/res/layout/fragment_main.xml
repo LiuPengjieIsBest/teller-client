@@ -1,59 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 首页中的第一个页面 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- 轮播器 -->
-    <include layout="@layout/viewpager_main"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="150dp" />
+        android:layout_height="match_parent">
 
-    <!-- 分割线 -->
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/bar" />
+        <!-- 轮播器 -->
+        <include layout="@layout/viewpager_main"
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
 
-    <!-- rcmd -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp" >
-
-        <TextView
-            style="@style/Default"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:text="推荐" />
-
-        <TextView
-            style="@style/Default"
-            android:id="@+id/tv_fragment_main_rank"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:text="排行榜" />
-
+        <!-- 分割线 -->
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/tv_fragment_main_rank"
-            android:src="@drawable/good"/>
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bar" />
 
-    </RelativeLayout>
+        <!-- rcmd -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp" >
 
-    <!-- rcmd推荐菜单使用RecyclerView -->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_fragment_main_rcmd"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+            <TextView
+                style="@style/Default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:text="推荐" />
+
+            <TextView
+                style="@style/Default"
+                android:id="@+id/tv_fragment_main_rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:text="排行榜" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/tv_fragment_main_rank"
+                android:src="@drawable/good"/>
+
+        </RelativeLayout>
+
+        <!-- rcmd推荐菜单使用RecyclerView -->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_fragment_main_rcmd"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
 
-</LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
+
+

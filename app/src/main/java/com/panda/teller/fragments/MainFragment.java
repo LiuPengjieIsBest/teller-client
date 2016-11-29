@@ -1,7 +1,6 @@
 package com.panda.teller.fragments;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,9 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.panda.teller.R;
 import com.panda.teller.models.Video;
+import com.panda.teller.utils.OnItemClickListener;
 import com.panda.teller.views.adapters.MainViewPagerAdapter;
 import com.panda.teller.views.widgets.VideoItemLayout;
 
@@ -22,7 +23,7 @@ import java.util.List;
  * Created by root on 16-11-8.
  */
 
-public class MainFragment extends Fragment implements ViewPager.OnPageChangeListener {
+public class MainFragment extends BaseFragment implements ViewPager.OnPageChangeListener {
 
     View mainLayout;
 
@@ -44,6 +45,7 @@ public class MainFragment extends Fragment implements ViewPager.OnPageChangeList
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
         View mainLayout = inflater.inflate(R.layout.fragment_main, container, false);
         this.mainLayout = mainLayout;
         initView(mainLayout);
@@ -84,9 +86,21 @@ public class MainFragment extends Fragment implements ViewPager.OnPageChangeList
         /* 视频布局 */
         RecyclerView videoListView = (RecyclerView) v.findViewById(R.id.rv_fragment_main_rcmd);
         videoListView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        videoListView.setAdapter(new VideoListAdapter());
+        VideoListAdapter adapter = new VideoListAdapter();
+        adapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, Object o) {
+            }
+        });
+        videoListView.setAdapter(adapter);
+        /* 解决打开后ScrollView（最外层）的页面布局起始位置不在最顶部 */
+        videoListView.setFocusable(false);
         /* 初始化视频列表 */
         videos = new ArrayList<Video>();
+        videos.add(new Video());
+        videos.add(new Video());
+        videos.add(new Video());
+        videos.add(new Video());
         videos.add(new Video());
         videos.add(new Video());
         videos.add(new Video());
@@ -101,9 +115,25 @@ public class MainFragment extends Fragment implements ViewPager.OnPageChangeList
             VideoViewHolder holder = new VideoViewHolder(new VideoItemLayout(parent.getContext()));
             return holder;
         }
+
+        private OnItemClickListener onItemClickListener;
+        public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+            this.onItemClickListener = onItemClickListener;
+        }
+
         @Override
-        public void onBindViewHolder(VideoViewHolder holder, int position) {
+        public void onBindViewHolder(VideoViewHolder holder, final int position) {
             holder.vl.setVideoItem(videos.get(position));
+            if(onItemClickListener != null) {
+                holder.vl.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Video video = videos.get(position);
+                        onItemClickListener.onItemClick(v, video);
+                        Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
         }
         @Override
         public int getItemCount() {

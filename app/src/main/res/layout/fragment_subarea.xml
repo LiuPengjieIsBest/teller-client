@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true" >
+
+    <!-- 上方actionbar -->
+    <RelativeLayout
+        style="@style/ActionBar">
+
+        <ImageView
+            android:id="@+id/iv_fragment_subarea_undo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/undo" />
+
+        <TextView
+            android:text="分区类型"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <!-- 两个按钮用于选择显示视频还是问题 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <!-- 左侧视频按钮，点击显示视频列表 -->
+        <Button
+            android:id="@+id/btn_fragment_subarea_video"
+            android:background="@drawable/grey_btn_normal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="0dp"
+            android:text="视频" />
+        <!-- 右侧问题按钮，点击显示问题列表 -->
+        <Button
+            android:id="@+id/btn_fragment_subarea_quiz"
+            android:background="@drawable/grey_btn_normal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="0dp"
+            android:text="问题" />
+
+    </LinearLayout>
+
+    <!-- 设置排列顺序 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/grey">
+
+        <Spinner
+            android:id="@+id/spin_fragment_subarea_sort_order"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:entries="@array/sort_orders"/>
+
+    </LinearLayout>
+
+    <!-- 分割线 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bar" />
+
+    <!-- 使用Fragment填充该FragmentLayout，用于显示视频/问题列表 -->
+    <FrameLayout
+        android:id="@+id/fl_framgent_subarea_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

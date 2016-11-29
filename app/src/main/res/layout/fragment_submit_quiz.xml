@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <!-- actionbar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <!-- 返回按钮 -->
+        <ImageView
+            android:id="@+id/iv_fragment_submit_quiz_undo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/undo"/>
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="提出问题" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <!-- warning框 -->
+            <TextView
+                android:id="@+id/tv_fragment_submit_quiz_warn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/red" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <!-- 问题标题 -->
+                <TableRow>
+                    <TextView
+                        style="@style/Default"
+                        android:text="问题标题"/>
+                    <EditText
+                        android:id="@+id/edtTxt_fragment_submit_quiz_title"
+                        style="@style/RoundEdtTxt"
+                        android:hint="问题的标题"/>
+                </TableRow>
+
+                <!-- 问题描述 -->
+                <TableRow>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp">
+                        <TextView
+                            style="@style/Default"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="问题描述"/>
+                    </LinearLayout>
+
+
+                    <EditText
+                        android:id="@+id/edtTxt_fragment_submit_quiz_content"
+                        style="@style/RoundEdtTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:gravity="top"
+                        android:hint="问题的详细描述"/>
+                </TableRow>
+
+                <!-- 问题配图 -->
+                <TableRow>
+                    <TextView
+                        style="@style/Default"
+                        android:text="问题配图"/>
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_fragment_submit_quiz_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <!-- 标签 -->
+                <TableRow>
+                    <TextView
+                        style="@style/Default"
+                        android:text="标签"/>
+                    <com.panda.teller.views.widgets.FlowLayout
+                        android:id="@+id/flow_fragment_submit_quiz_tag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <!-- 选择分区 -->
+                <TableRow>
+                    <TextView
+                        style="@style/Default"
+                        android:text="选择分区"/>
+                    <Button
+                        android:id="@+id/btn_fragment_submit_quiz_area"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- 提交问题按钮 -->
+    <Button
+        android:id="@+id/btn_fragment_submit_quiz"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="提交问题"/>
+
+</LinearLayout>

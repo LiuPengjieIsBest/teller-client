@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- 显示标签内容 -->
     <TextView
-        android:id="@+id/tv_flowlayout_item_txt"
+        android:id="@+id/tv_textflow_item_txt"
         style="@style/RoundTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

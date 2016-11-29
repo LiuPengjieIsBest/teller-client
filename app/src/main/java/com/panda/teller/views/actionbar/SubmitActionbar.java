@@ -1,7 +1,7 @@
-package com.panda.teller.fragments;
+package com.panda.teller.views.actionbar;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,16 +9,18 @@ import android.view.ViewGroup;
 import com.panda.teller.R;
 
 /**
- * Created by root on 16-11-8.
+ * Created by root on 16-11-22.
  */
 
-public class SettingFragment extends Fragment {
+public class SubmitActionbar extends Fragment {
+
+    View submitActionbar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View settingLayout = inflater.inflate(R.layout.fragment_setting, container, false);
-        return settingLayout;
+        submitActionbar = inflater.inflate(R.layout.actionbar_submit, container, false);
+        return submitActionbar;
     }
 
 }

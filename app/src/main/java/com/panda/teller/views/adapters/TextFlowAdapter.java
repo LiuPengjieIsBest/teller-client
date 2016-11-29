@@ -39,7 +39,7 @@ public class TextFlowAdapter {
     public void addItem(final String text) {
         LinearLayout container = (LinearLayout) LayoutInflater.from(context).
                 inflate(R.layout.textflow_item, null);
-        TextView child = (TextView) container.findViewById(R.id.tv_flowlayout_item_txt);
+        TextView child = (TextView) container.findViewById(R.id.tv_textflow_item_txt);
         child.setText(text);
         container.removeView(child);
         flowLayout.addView(child);
