@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:textSize="20sp"
-            android:text="我的回答" />
+            android:text="我的提问" />
     </RelativeLayout>
 
     <!-- 选择排列顺序（筛选） -->

@@ -6,6 +6,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="我是一个问题单元"/>
+        android:text="我是一个回答单元"/>
 
 </RelativeLayout>
