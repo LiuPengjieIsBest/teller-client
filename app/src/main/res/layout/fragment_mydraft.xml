@@ -12,7 +12,7 @@
         android:layout_height="40dp">
 
         <ImageView
-            android:id="@+id/iv_fragment_myquiz_undo"
+            android:id="@+id/iv_fragment_mydraft_undo"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:textSize="20sp"
-            android:text="我的提问" />
+            android:text="我的投稿" />
     </RelativeLayout>
 
     <!-- 选择排列顺序（筛选） -->
@@ -39,7 +39,7 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/lv_fragment_myquiz_list"
+        android:id="@+id/lv_fragment_mydraft_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">

@@ -43,7 +43,7 @@ public class MyAnswerFragment extends BaseFragment implements View.OnClickListen
 
     /* 主要是初始化actionbar和视频列表 */
     public void initView() {
-        adapter = new AnswerAdapter(getContext(), R.layout.answer_item, answers);
+        adapter = new AnswerAdapter(getContext(), R.layout.answer_item_long, answers);
         listView = (ListView) myAnswerLayout.findViewById(R.id.lv_fragment_myanswer_list);
         listView.setAdapter(adapter);
         addItem(new Answer());

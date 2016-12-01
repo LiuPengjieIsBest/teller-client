@@ -29,6 +29,8 @@ public class UserMenuFragment extends BaseFragment implements View.OnClickListen
     /* */
     MyAnswerFragment myAnswerFragment;
     MyQuizFragment myQuizFragment;
+    MyDraftFragment myDraftFragment;
+    MyCollectFragment myCollectFragment;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -78,8 +80,18 @@ public class UserMenuFragment extends BaseFragment implements View.OnClickListen
             mActivity.showFragment(myAnswerFragment);
             break;
         case R.id.button_myDraft:
+            if(null == myDraftFragment) {
+                myDraftFragment = new MyDraftFragment();
+            }
+            /* 从用户菜单的父fragment（即HomeFragment）跳转到回答Fragment */
+            mActivity.showFragment(myDraftFragment);
             break;
         case R.id.button_myCollect:
+            if(null == myCollectFragment) {
+                myCollectFragment = new MyCollectFragment();
+            }
+            /* 从用户菜单的父fragment（即HomeFragment）跳转到回答Fragment */
+            mActivity.showFragment(myCollectFragment);
             break;
         case R.id.button_myHistory:
             break;
