@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,9 +39,10 @@ public class MainFragment extends BaseFragment implements ViewPager.OnPageChange
 
     /* 视频单元布局 */
     RecyclerView videoListView;
-
     /* 视频列表 */
     List<Video> videos;
+    /* 显示对应视频的页面 */
+    PlayVideoFragment playVideoFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,6 +53,7 @@ public class MainFragment extends BaseFragment implements ViewPager.OnPageChange
         initView(mainLayout);
         return mainLayout;
     }
+
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -90,6 +93,11 @@ public class MainFragment extends BaseFragment implements ViewPager.OnPageChange
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(View v, Object o) {
+                /* 点击一项后跳转到该视频的页面 */
+                if(playVideoFragment == null) {
+                    playVideoFragment = new PlayVideoFragment();
+                }
+                mActivity.showFragment(playVideoFragment);
             }
         });
         videoListView.setAdapter(adapter);
@@ -130,6 +138,7 @@ public class MainFragment extends BaseFragment implements ViewPager.OnPageChange
                     public void onClick(View v) {
                         Video video = videos.get(position);
                         onItemClickListener.onItemClick(v, video);
+                        Log.d("MainFragment", "显示视频:" + position);
                         Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
                     }
                 });

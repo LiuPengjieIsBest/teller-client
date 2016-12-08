@@ -7,9 +7,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
+import android.view.animation.Animation;
 
 import com.panda.teller.R;
 import com.panda.teller.fragments.HomeFragment;
+import com.panda.teller.utils.AnimCallBack;
 
 
 /**
@@ -17,11 +20,44 @@ import com.panda.teller.fragments.HomeFragment;
  * 主页
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Animation.AnimationListener {
 
     HomeFragment homeFragment;
 
     FragmentManager fragmentManager;
+
+    AnimCallBack animCallBack;
+
+    public void setAnimCallBack(AnimCallBack animCallBack) {
+        this.animCallBack = animCallBack;
+    }
+    @Override
+    public void onAnimationEnd(Animation anim) {
+        if(animCallBack != null) {
+            animCallBack.onAnimEnd();
+        }
+    }
+    @Override
+    public void onAnimationRepeat(Animation anim) {
+        if(animCallBack != null) {
+            animCallBack.onAnimRepeat();
+        }
+    }
+    @Override
+    public void onAnimationStart(Animation anim) {
+        if(animCallBack != null) {
+            animCallBack.onAnimStart();
+        }
+    }
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        super.dispatchTouchEvent(event);
+        if(animCallBack != null) {
+            return animCallBack.solveTouchEvent(event);
+        } else {
+            return false;
+        }
+    }
 
     /**
      * 主界面启动器

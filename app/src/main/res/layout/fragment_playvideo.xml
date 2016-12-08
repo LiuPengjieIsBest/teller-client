@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/white" >
+        <LinearLayout
+            android:id="@+id/ll_fragment_playvideo_container"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- actionbar -->
+            <RelativeLayout
+                style="@style/ActionBar">
+                <ImageView
+                    android:id="@+id/iv_fragment_playvideo_undo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undo" />
+            </RelativeLayout>
+            <!-- 分割线 -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/bar" />
+
+            <!-- 视频显示区 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="视频内容"/>
+            </RelativeLayout>
+            <!-- 分割线 -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/bar" />
+
+            <!-- 视频信息区 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/tv_fragment_playvideo_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="视频标题"/>
+                <TextView
+                    android:id="@+id/tv_fragment_playvideo_intro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_below="@id/tv_fragment_playvideo_title"
+                    android:text="视频描述"/>
+
+                <!-- 下方一栏中显示用户信息和关注按钮 -->
+                <RelativeLayout
+                    android:id="@+id/rl_fragment_playvideo_userinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true">
+                    <ImageView
+                        android:id="@+id/iv_fragment_playvideo_userhead"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/head"/>
+                    <TextView
+                        android:id="@+id/tv_fragment_playvideo_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/iv_fragment_playvideo_userhead"
+                        android:layout_centerVertical="true"
+                        android:text="作者"/>
+                    <Button
+                        android:id="@+id/btn_fragment_playvideo_follow"
+                        style="@style/RoundBtn"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:text="关注" />
+                </RelativeLayout>
+
+                <!-- 在奇怪的地方显示上传日期和点击量 -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_above="@id/rl_fragment_playvideo_userinfo">
+                    <TextView
+                        android:id="@+id/tv_fragment_playvideo_clickcount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="点击量:---"/>
+                    <TextView
+                        android:id="@+id/tv_fragment_playvideo_uploadtime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@id/tv_fragment_playvideo_clickcount"
+                        android:text="上传日期:2016-10-12"/>
+                </RelativeLayout>
+            </RelativeLayout>
+            <!-- 分割线 -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/bar" />
+
+            <!-- 推荐视频区 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="推荐视频"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:background="@color/deepgrey"/>
+                <!-- 使用VideoListFragment填充该FrameLayout，以显示视频列表 -->
+                <FrameLayout
+                    android:id="@+id/fl_fragment_playvideo_videos"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <!-- 分割线 -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/bar" />
+
+            <!-- 评论区 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_fragment_playvideo_commentcount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="评论(how many)"/>
+                <!-- 使用CommentListFragment填充这个FrameLayout，以显示评论列表 -->
+                <FrameLayout
+                    android:id="@+id/fl_fragment_playvideo_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 评论框，起初在屏幕外， -->
+    <LinearLayout
+        android:id="@+id/ll_fragment_playvideo_comment"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/edtTxt_fragment_playvideo_edit_comment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="评论回复" />
+        <Button
+            android:id="@+id/btn_fragment_playvideo_submit_comment"
+            style="@style/RoundBtn"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="发送"/>
+    </LinearLayout>
+</RelativeLayout>
+

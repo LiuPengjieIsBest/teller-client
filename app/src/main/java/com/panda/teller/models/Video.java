@@ -12,6 +12,10 @@ public class Video {
 
     String visibility;
 
+    String title;
+
+    String intro;
+
     String content;
 
     float price;
@@ -26,6 +30,23 @@ public class Video {
 
     /* 协调数据库-go-java的计时 */
     long time;
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+    public String getTitle() {
+
+        return title;
+    }
+
+    public String getIntro() {
+        return intro;
+    }
 
     public void setId(int id) {
         this.id = id;
